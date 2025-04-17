@@ -1,0 +1,101 @@
+[
+  {
+    "name": "Navbar",
+    "description": "Navigation bar component for the landing page",
+    "props": {
+      "logo": "string",
+      "menuItems": "array",
+      "actionButton": "object"
+    },
+    "example": "<Navbar logo='/logo.svg' menuItems={['Home', 'Services', 'About', 'Contact']} actionButton={{ text: 'Get Started', url: '/signup' }} />"
+  },
+  {
+    "name": "HeroSection",
+    "description": "Main hero section with headline, subheading and call-to-action",
+    "props": {
+      "title": "string",
+      "subtitle": "string",
+      "image": "string",
+      "cta": "object"
+    },
+    "example": "<HeroSection title='Transform Your Business' subtitle='Innovative solutions for modern challenges' image='/hero-image.jpg' cta={{ text: 'Learn More', url: '/services' }} />"
+  },
+  {
+    "name": "Services",
+    "description": "Service offerings grid with cards",
+    "props": {
+      "title": "string",
+      "services": "array"
+    },
+    "example": "<Services title='Our Services' services={[{title: 'Web Development', description: 'Custom websites and applications', icon: 'web-icon'}, {title: 'Mobile Apps', description: 'iOS and Android development', icon: 'mobile-icon'}]} />"
+  },
+  {
+    "name": "HowItWorks",
+    "description": "Step-by-step process explanation",
+    "props": {
+      "title": "string",
+      "steps": "array"
+    },
+    "example": "<HowItWorks title='How It Works' steps={[{number: 1, title: 'Discovery', description: 'We learn about your needs'}, {number: 2, title: 'Strategy', description: 'We develop a plan'}]} />"
+  },
+  {
+    "name": "SocialProof",
+    "description": "Testimonials, reviews, and client logos",
+    "props": {
+      "title": "string",
+      "testimonials": "array",
+      "logos": "array"
+    },
+    "example": "<SocialProof title='Trusted By' testimonials={[{text: 'Amazing service!', author: 'John Doe', company: 'ABC Inc'}]} logos={['/client1.svg', '/client2.svg']} />"
+  },
+  {
+    "name": "WhyChooseUs",
+    "description": "Highlights key benefits and differentiators",
+    "props": {
+      "title": "string",
+      "reasons": "array"
+    },
+    "example": "<WhyChooseUs title='Why Choose Us' reasons={[{title: 'Experience', description: '10+ years in the industry'}, {title: 'Results', description: '500+ successful projects'}]} />"
+  },
+  {
+    "name": "TeamSection",
+    "description": "Team member profiles and information",
+    "props": {
+      "title": "string",
+      "subtitle": "string",
+      "members": "array"
+    },
+    "example": "<TeamSection title='Our Team' subtitle='Meet the experts behind our success' members={[{name: 'Jane Smith', role: 'CEO', image: '/team/jane.jpg', bio: 'Experienced leader'}]} />"
+  },
+  {
+    "name": "MapContact",
+    "description": "Contact information with embedded map",
+    "props": {
+      "address": "string",
+      "phone": "string",
+      "email": "string",
+      "mapUrl": "string"
+    },
+    "example": "<MapContact address='123 Business St, City, Country' phone='+1 234 567 8900' email='contact@example.com' mapUrl='https://maps.google.com/?q=123+Business+St' />"
+  },
+  {
+    "name": "FAQ",
+    "description": "Frequently asked questions with expandable answers",
+    "props": {
+      "title": "string",
+      "questions": "array"
+    },
+    "example": "<FAQ title='Frequently Asked Questions' questions={[{question: 'What services do you offer?', answer: 'We provide web development, mobile apps, and consulting services.'}, {question: 'How much does it cost?', answer: 'Pricing depends on project scope.'}]} />"
+  },
+  {
+    "name": "Footer",
+    "description": "Page footer with links, social media, and copyright",
+    "props": {
+      "logo": "string",
+      "links": "array",
+      "social": "array",
+      "copyright": "string"
+    },
+    "example": "<Footer logo='/logo.svg' links={[{text: 'Privacy', url: '/privacy'}, {text: 'Terms', url: '/terms'}]} social={[{platform: 'Twitter', url: 'https://twitter.com/example'}, {platform: 'LinkedIn', url: 'https://linkedin.com/company/example'}]} copyright='© 2023 Example Company. All rights reserved.' />"
+  }
+] 
