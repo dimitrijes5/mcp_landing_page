@@ -1,136 +1,140 @@
 [
-  {
-    "name": "Navbar",
-    "version": "1.0.0",
-    "category": "Navigation",
-    "description": "Navigation bar component for the landing page",
-    "props": {
-      "logo": "string",
-      "menuItems": "array",
-      "actionButton": "object"
+    {
+      "name": "Navbar",
+      "description": "Top navigation bar with logo and menu links",
+      "props": {
+        "logoSrc": "string",
+        "links": "Array<{ label: string; href: string }>",
+        "sticky": "boolean"
+      },
+      "example": "<Navbar logoSrc=\"/logo.png\" links={[{ label: 'Home', href: '#' }, { label: 'Features', href: '#features' }]} sticky={true} />"
     },
-    "example": "<Navbar logo='/logo.svg' menuItems={['Home', 'Services', 'About', 'Contact']} actionButton={{ text: 'Get Started', url: '/signup' }} />",
-    "tailwind": {
-      "container": "flex items-center justify-between w-full py-4 px-6 bg-white shadow-sm",
-      "logo": "h-8 w-auto",
-      "menu": "hidden md:flex space-x-8",
-      "menuItem": "text-gray-600 hover:text-gray-900 font-medium",
-      "actionButton": "bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors",
-      "mobileMenu": "md:hidden",
-      "mobileMenuButton": "text-gray-500 hover:text-gray-700"
+    {
+      "name": "Hero",
+      "description": "Hero section with headline, subheadline and primary call‑to‑action button",
+      "props": {
+        "title": "string",
+        "subtitle": "string",
+        "ctaText": "string",
+        "ctaHref": "string",
+        "backgroundImage": "string"
+      },
+      "example": "<Hero title=\"Welcome to Acme\" subtitle=\"We build amazing things\" ctaText=\"Get Started\" ctaHref=\"#signup\" backgroundImage=\"/hero.jpg\" />"
     },
-    "responsive": {
-      "mobile": "px-4 py-3",
-      "tablet": "px-6 py-4",
-      "desktop": "px-8 py-4 max-w-7xl mx-auto"
+    {
+      "name": "Services",
+      "description": "Overview of services or features you offer (merged into one section)",
+      "props": {
+        "items": "Array<{ icon: string; title: string; description: string }>"
+      },
+      "example": "<Services items={[{ icon: 'speed', title: 'Fast', description: 'Lightning‑quick delivery' }, { icon: 'secure', title: 'Secure', description: 'Bank‑grade security' }]} />"
+    },
+    {
+      "name": "HowItWorks",
+      "description": "Step‑by‑step guide explaining your process",
+      "props": {
+        "steps": "Array<{ number: number; title: string; description: string }>"
+      },
+      "example": "<HowItWorks steps={[{ number: 1, title: 'Sign Up', description: 'Create your account' }, { number: 2, title: 'Customize', description: 'Pick your options' }]} />"
+    },
+    {
+      "name": "SocialProof",
+      "description": "Testimonials and reviews from happy customers",
+      "props": {
+        "testimonials": "Array<{ author: string; quote: string; avatar?: string }>"
+      },
+      "example": "<SocialProof testimonials={[{ author: 'Jane Doe', quote: 'Amazing service!', avatar: '/jane.jpg' }]} />"
+    },
+    {
+      "name": "WhyChooseUs",
+      "description": "Key stats or badges to highlight why to trust you",
+      "props": {
+        "stats": "Array<{ label: string; value: string }>",
+        "badges": "Array<{ src: string; alt: string }>"
+      },
+      "example": "<WhyChooseUs stats={[{ label: 'Users', value: '10k+' }]} badges={[{ src: '/badge1.png', alt: 'Top Rated' }]} />"
+    },
+    {
+      "name": "MeetTheTeam",
+      "description": "Profiles of your core team members",
+      "props": {
+        "members": "Array<{ name: string; role: string; photo: string; bio?: string }>"
+      },
+      "example": "<MeetTheTeam members={[{ name: 'Alice', role: 'CEO', photo: '/alice.jpg' }]} />"
+    },
+    {
+      "name": "MapContactForm",
+      "description": "Embedded map alongside a contact/inquiry form",
+      "props": {
+        "mapEmbedUrl": "string",
+        "formId": "string"
+      },
+      "example": "<MapContactForm mapEmbedUrl=\"https://maps.google.com/...\" formId=\"contactForm\" />"
+    },
+    {
+      "name": "FAQ",
+      "description": "Frequently asked questions accordion",
+      "props": {
+        "items": "Array<{ question: string; answer: string }>"
+      },
+      "example": "<FAQ items={[{ question: 'How does it work?', answer: 'Just sign up...' }]} />"
+    },
+    {
+      "name": "Footer",
+      "description": "Bottom site footer with links and copyright",
+      "props": {
+        "logoSrc": "string",
+        "links": "Array<{ label: string; href: string }>",
+        "copyright": "string"
+      },
+      "example": "<Footer logoSrc=\"/logo-footer.png\" links={[{ label: 'Privacy', href: '/privacy' }]} copyright=\"© 2025 Acme\" />"
+    },
+    {
+      "name": "LandingPage",
+      "description": "Wrapper that assembles all sections in the correct order",
+      "props": {
+        "sections": "Array<ReactNode>"
+      },
+      "example": "<LandingPage sections={[<Navbar />, <Hero />, <Services />, <HowItWorks />, <SocialProof />, <WhyChooseUs />, <MeetTheTeam />, <MapContactForm />, <FAQ />, <Footer />]} />"
+    },
+    {
+      "name": "hero",
+      "type": "hero",
+      "title": "Welcome to MCP Landing Page",
+      "subtitle": "A powerful landing page solution built with Model Context Protocol",
+      "cta": {
+        "text": "Get Started",
+        "url": "#"
+      }
+    },
+    {
+      "name": "features",
+      "type": "features",
+      "title": "Features",
+      "items": [
+        {
+          "title": "Easy to Use",
+          "description": "Simple and intuitive interface",
+          "icon": "🚀"
+        },
+        {
+          "title": "Customizable",
+          "description": "Easily adapt to your needs",
+          "icon": "⚙️"
+        },
+        {
+          "title": "Fast",
+          "description": "Optimized for performance",
+          "icon": "⚡"
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "type": "contact",
+      "title": "Contact Us",
+      "email": "contact@example.com",
+      "phone": "+1 (123) 456-7890"
     }
-  },
-  {
-    "name": "HeroSection",
-    "version": "1.0.0",
-    "category": "Header",
-    "description": "Main hero section with headline, subheading and call-to-action",
-    "props": {
-      "title": "string",
-      "subtitle": "string",
-      "image": "string",
-      "cta": "object"
-    },
-    "example": "<HeroSection title='Transform Your Business' subtitle='Innovative solutions for modern challenges' image='/hero-image.jpg' cta={{ text: 'Learn More', url: '/services' }} />",
-    "tailwind": {
-      "container": "relative bg-gray-50",
-      "wrapper": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32",
-      "grid": "grid grid-cols-1 lg:grid-cols-2 gap-8 items-center",
-      "contentWrapper": "flex flex-col space-y-6",
-      "title": "text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight",
-      "subtitle": "text-xl md:text-2xl text-gray-600 mt-4 max-w-3xl",
-      "ctaWrapper": "mt-8",
-      "ctaButton": "inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
-      "imageWrapper": "relative h-64 md:h-96 lg:h-full",
-      "image": "rounded-lg object-cover w-full h-full shadow-xl"
-    },
-    "responsive": {
-      "mobile": "py-10 px-4",
-      "tablet": "py-16 px-6",
-      "desktop": "py-24 px-8"
-    }
-  },
-  {
-    "name": "Services",
-    "description": "Service offerings grid with cards",
-    "props": {
-      "title": "string",
-      "services": "array"
-    },
-    "example": "<Services title='Our Services' services={[{title: 'Web Development', description: 'Custom websites and applications', icon: 'web-icon'}, {title: 'Mobile Apps', description: 'iOS and Android development', icon: 'mobile-icon'}]} />"
-  },
-  {
-    "name": "HowItWorks",
-    "description": "Step-by-step process explanation",
-    "props": {
-      "title": "string",
-      "steps": "array"
-    },
-    "example": "<HowItWorks title='How It Works' steps={[{number: 1, title: 'Discovery', description: 'We learn about your needs'}, {number: 2, title: 'Strategy', description: 'We develop a plan'}]} />"
-  },
-  {
-    "name": "SocialProof",
-    "description": "Testimonials, reviews, and client logos",
-    "props": {
-      "title": "string",
-      "testimonials": "array",
-      "logos": "array"
-    },
-    "example": "<SocialProof title='Trusted By' testimonials={[{text: 'Amazing service!', author: 'John Doe', company: 'ABC Inc'}]} logos={['/client1.svg', '/client2.svg']} />"
-  },
-  {
-    "name": "WhyChooseUs",
-    "description": "Highlights key benefits and differentiators",
-    "props": {
-      "title": "string",
-      "reasons": "array"
-    },
-    "example": "<WhyChooseUs title='Why Choose Us' reasons={[{title: 'Experience', description: '10+ years in the industry'}, {title: 'Results', description: '500+ successful projects'}]} />"
-  },
-  {
-    "name": "TeamSection",
-    "description": "Team member profiles and information",
-    "props": {
-      "title": "string",
-      "subtitle": "string",
-      "members": "array"
-    },
-    "example": "<TeamSection title='Our Team' subtitle='Meet the experts behind our success' members={[{name: 'Jane Smith', role: 'CEO', image: '/team/jane.jpg', bio: 'Experienced leader'}]} />"
-  },
-  {
-    "name": "MapContact",
-    "description": "Contact information with embedded map",
-    "props": {
-      "address": "string",
-      "phone": "string",
-      "email": "string",
-      "mapUrl": "string"
-    },
-    "example": "<MapContact address='123 Business St, City, Country' phone='+1 234 567 8900' email='contact@example.com' mapUrl='https://maps.google.com/?q=123+Business+St' />"
-  },
-  {
-    "name": "FAQ",
-    "description": "Frequently asked questions with expandable answers",
-    "props": {
-      "title": "string",
-      "questions": "array"
-    },
-    "example": "<FAQ title='Frequently Asked Questions' questions={[{question: 'What services do you offer?', answer: 'We provide web development, mobile apps, and consulting services.'}, {question: 'How much does it cost?', answer: 'Pricing depends on project scope.'}]} />"
-  },
-  {
-    "name": "Footer",
-    "description": "Page footer with links, social media, and copyright",
-    "props": {
-      "logo": "string",
-      "links": "array",
-      "social": "array",
-      "copyright": "string"
-    },
-    "example": "<Footer logo='/logo.svg' links={[{text: 'Privacy', url: '/privacy'}, {text: 'Terms', url: '/terms'}]} social={[{platform: 'Twitter', url: 'https://twitter.com/example'}, {platform: 'LinkedIn', url: 'https://linkedin.com/company/example'}]} copyright='© 2023 Example Company. All rights reserved.' />"
-  }
-] 
+  ]
+  
