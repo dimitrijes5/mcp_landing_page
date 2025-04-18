@@ -1,14 +1,9 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { NavbarProps } from '@/types';  
 
-interface NavbarProps {
-  logoSrc: string;
-  links: Array<{ label: string; href: string }>;
-  sticky?: boolean;
-}
-
-export function Navbar({ logoSrc, links, sticky = false }: NavbarProps) {
+export function Navbar({logoSrc, links, sticky}: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (

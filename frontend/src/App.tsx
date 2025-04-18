@@ -13,25 +13,43 @@ import {
 import EditBar from './components/edit/EditBar';
 import { useEditMode } from './contexts/EditModeContext';
 import EditMenu from './components/edit/EditMenu';
+import { usePage } from './contexts/PageContext';
+import { useEffect } from 'react';
 
 function App() {
   const { isEditMode } = useEditMode();
+
+  const { page, setPage, setNavbar } = usePage();
+
+  useEffect(() => {
+    // set initial navbar
+    setNavbar({
+      logoSrc: '/logo.png',
+      links: [
+          { label: 'Home', href: '#' },
+          { label: 'Services', href: '#services' },
+          { label: 'How It Works', href: '#how-it-works' },
+          { label: 'About Us', href: '#about-us' },
+          { label: 'FAQ', href: '#faq' },
+          { label: 'Contact', href: '#contact' }
+        ],
+      sticky:false
+    });
+  }, []);
+
+  if (!page) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className={`w-screen ${isEditMode ? 'grid grid-cols-12' : ''}`} style={{gridTemplateColumns: isEditMode ? '60% 40%' : '1fr'}}>
       <div className={`min-h-screen w-full overflow-x-hidden`}>
         <EditBar />
         {/* Navbar */}
         <Navbar 
-          logoSrc="/logo.png" 
-          links={[
-            { label: 'Home', href: '#' },
-            { label: 'Services', href: '#services' },
-            { label: 'How It Works', href: '#how-it-works' },
-            { label: 'About Us', href: '#about-us' },
-            { label: 'FAQ', href: '#faq' },
-            { label: 'Contact', href: '#contact' }
-          ]}
-          sticky={true}
+          logoSrc={page?.navbar.logoSrc}
+          links={page?.navbar.links}
+          sticky={page?.navbar.sticky}
         />
         
         {/* Hero */}
