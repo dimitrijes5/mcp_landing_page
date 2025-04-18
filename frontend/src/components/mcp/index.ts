@@ -1,0 +1,10 @@
+export { Navbar } from './Navbar';
+export { Hero } from './Hero';
+export { Services } from './Services';
+export { HowItWorks } from './HowItWorks';
+export { SocialProof } from './SocialProof';
+export { WhyChooseUs } from './WhyChooseUs';
+export { MeetTheTeam } from './MeetTheTeam';
+export { MapContactForm } from './MapContactForm';
+export { FAQ } from './FAQ';
+export { Footer } from './Footer'; 
